@@ -48,19 +48,16 @@ npm run dev
 ### Day 1: Project Initialization
 
 - [ ] **Task 1.1**: Create Next.js project with TypeScript
-
   - Command: `npx create-next-app@latest nextjs-x509 --typescript --tailwind --app`
   - Verify: Project runs with `npm run dev`
   - Expected: App accessible at http://localhost:3000
 
 - [ ] **Task 1.2**: Install cryptography libraries
-
   - Command: `npm install jsrsasign asn1js`
   - Verify: Check package.json for dependencies
   - Expected: Both libraries in dependencies
 
 - [ ] **Task 1.3**: Install UI libraries
-
   - Command: `npm install lucide-react class-variance-authority clsx tailwind-merge`
   - Verify: Check package.json
   - Expected: All UI libraries installed
@@ -90,7 +87,6 @@ npm run dev
   - Expected: Clean project structure
 
 - [ ] **Task 2.2**: Configure TypeScript (strict mode)
-
   - File: `tsconfig.json`
   - Set: `"strict": true`
   - Add path aliases: `"@/*": ["./*"]`
@@ -107,14 +103,12 @@ npm run dev
 ### Day 3: Type Definitions
 
 - [ ] **Task 3.1**: Create base types
-
   - File: `types/index.ts`
   - Define: `ParsedCertificate`, `DistinguishedName`, `PublicKeyInfo`
   - Verify: No TypeScript errors
   - Expected: All certificate types defined
 
 - [ ] **Task 3.2**: Create signature types
-
   - File: `types/index.ts` (continue)
   - Define: `SignatureOptions`, `SignatureResult`, `SignatureMetadata`
   - Verify: Types compile
@@ -129,14 +123,12 @@ npm run dev
 ### Day 4: Utility Functions
 
 - [ ] **Task 4.1**: Create cn utility
-
   - File: `lib/utils/cn.ts`
   - Implement: Class name merger using clsx and tailwind-merge
   - Test: Import in a component
   - Expected: Utility works for conditional classes
 
 - [ ] **Task 4.2**: Create encoding utilities
-
   - File: `lib/utils/encoding.ts`
   - Implement: `base64ToHex`, `hexToBase64`, `arrayBufferToBase64`, `base64ToArrayBuffer`
   - Test: Unit tests for each function
@@ -183,6 +175,7 @@ npm run dev
   npx shadcn-ui@latest add separator
   npx shadcn-ui@latest add accordion
   ```
+
   - Verify: All components work
   - Expected: Complete component library
 
@@ -193,28 +186,24 @@ npm run dev
 ### Day 6: Certificate Parser
 
 - [ ] **Task 6.1**: Create certificate parser module
-
   - File: `lib/crypto/certificate-parser.ts`
   - Implement: `parseCertificate(certData, format)`
   - Use: jsrsasign X509 class
   - Expected: Parse PEM certificates
 
 - [ ] **Task 6.2**: Implement DN parser
-
   - File: `lib/crypto/certificate-parser.ts`
   - Implement: `parseDistinguishedName(dnString)`
   - Parse: CN, O, OU, L, ST, C, E
   - Expected: Extract all DN fields
 
 - [ ] **Task 6.3**: Implement public key parser
-
   - File: `lib/crypto/certificate-parser.ts`
   - Implement: `parsePublicKey(x509)`
   - Support: RSA and ECDSA
   - Expected: Extract key info
 
 - [ ] **Task 6.4**: Implement fingerprint calculator
-
   - File: `lib/crypto/certificate-parser.ts`
   - Implement: `calculateFingerprints(pemCert)`
   - Calculate: SHA-1 and SHA-256
@@ -229,28 +218,24 @@ npm run dev
 ### Day 7: Certificate Upload Component
 
 - [ ] **Task 7.1**: Create upload component structure
-
   - File: `components/certificates/CertificateUpload.tsx`
   - Setup: Component with props interface
   - Add: State management
   - Expected: Component skeleton ready
 
 - [ ] **Task 7.2**: Implement drag & drop
-
   - File: `components/certificates/CertificateUpload.tsx`
   - Add: onDragOver, onDragLeave, onDrop handlers
   - Style: Visual feedback for drag state
   - Expected: Drag & drop works
 
 - [ ] **Task 7.3**: Implement file input
-
   - File: `components/certificates/CertificateUpload.tsx`
   - Add: Hidden file input with label
   - Accept: .pem, .crt, .cer, .der, .pfx, .p12
   - Expected: File selection works
 
 - [ ] **Task 7.4**: Implement file parsing
-
   - File: `components/certificates/CertificateUpload.tsx`
   - Call: parseCertificate on file upload
   - Handle: Success and error cases
@@ -265,42 +250,36 @@ npm run dev
 ### Day 8: Certificate Viewer Component
 
 - [ ] **Task 8.1**: Create viewer component structure
-
   - File: `components/certificates/CertificateViewer.tsx`
   - Setup: Component with certificate prop
   - Layout: Card with sections
   - Expected: Component structure ready
 
 - [ ] **Task 8.2**: Implement subject section
-
   - File: `components/certificates/CertificateViewer.tsx`
   - Display: All subject fields
   - Use: Accordion for expandable view
   - Expected: Subject info displayed
 
 - [ ] **Task 8.3**: Implement issuer section
-
   - File: `components/certificates/CertificateViewer.tsx`
   - Display: All issuer fields
   - Use: Accordion
   - Expected: Issuer info displayed
 
 - [ ] **Task 8.4**: Implement validity section
-
   - File: `components/certificates/CertificateViewer.tsx`
   - Display: notBefore, notAfter dates
   - Format: Localized date strings
   - Expected: Validity period shown
 
 - [ ] **Task 8.5**: Implement public key section
-
   - File: `components/certificates/CertificateViewer.tsx`
   - Display: Algorithm, key size
   - Show: Additional key details
   - Expected: Public key info displayed
 
 - [ ] **Task 8.6**: Implement fingerprints section
-
   - File: `components/certificates/CertificateViewer.tsx`
   - Display: SHA-1 and SHA-256 fingerprints
   - Format: Monospace font, breakable
@@ -315,7 +294,6 @@ npm run dev
 ### Day 9: Certificate Card Component
 
 - [ ] **Task 9.1**: Create certificate card
-
   - File: `components/certificates/CertificateCard.tsx`
   - Display: Summary view of certificate
   - Show: CN, issuer, validity, status
@@ -330,14 +308,12 @@ npm run dev
 ### Day 10: Certificate Page
 
 - [ ] **Task 10.1**: Create certificates page
-
   - File: `app/certificates/page.tsx`
   - Layout: Upload + viewer sections
   - State: Manage loaded certificate
   - Expected: Certificate management page
 
 - [ ] **Task 10.2**: Integrate upload component
-
   - File: `app/certificates/page.tsx`
   - Add: CertificateUpload component
   - Handle: onCertificateLoaded callback
@@ -356,28 +332,24 @@ npm run dev
 ### Day 11: Signature Generator
 
 - [ ] **Task 11.1**: Create signature generator module
-
   - File: `lib/crypto/signature-generator.ts`
   - Implement: `createSignature(document, cert, key, options)`
   - Use: jsrsasign for PKCS#7
   - Expected: Generate signatures
 
 - [ ] **Task 11.2**: Implement hash calculation
-
   - File: `lib/crypto/signature-generator.ts`
   - Support: SHA-256, SHA-384, SHA-512
   - Use: jsrsasign.KJUR.crypto.Util.hashHex
   - Expected: Calculate document hashes
 
 - [ ] **Task 11.3**: Implement PKCS#7 signature
-
   - File: `lib/crypto/signature-generator.ts`
   - Create: SignedData structure
   - Include: Certificate in signature
   - Expected: Valid PKCS#7 signatures
 
 - [ ] **Task 11.4**: Implement detached signature
-
   - File: `lib/crypto/signature-generator.ts`
   - Create: Signature without document
   - Return: Base64 encoded signature
@@ -392,14 +364,12 @@ npm run dev
 ### Day 12: Private Key Handler
 
 - [ ] **Task 12.1**: Create key management module
-
   - File: `lib/crypto/key-management.ts`
   - Implement: `importPrivateKey(keyData, password)`
   - Support: PEM and PKCS#8
   - Expected: Import private keys
 
 - [ ] **Task 12.2**: Implement key decryption
-
   - File: `lib/crypto/key-management.ts`
   - Implement: `decryptPrivateKey(encryptedKey, password)`
   - Use: jsrsasign
@@ -414,14 +384,12 @@ npm run dev
 ### Day 13: Document Upload Component
 
 - [ ] **Task 13.1**: Create document upload component
-
   - File: `components/signing/DocumentUpload.tsx`
   - Similar to: CertificateUpload
   - Accept: All file types
   - Expected: Upload any document
 
 - [ ] **Task 13.2**: Add file size validation
-
   - File: `components/signing/DocumentUpload.tsx`
   - Limit: 50MB max
   - Show: Error for large files
@@ -436,14 +404,12 @@ npm run dev
 ### Day 14: Signature Options Component
 
 - [ ] **Task 14.1**: Create options component
-
   - File: `components/signing/SignatureOptions.tsx`
   - Add: Algorithm selector (SHA-256, SHA-384, SHA-512)
   - Add: Format selector (PKCS#7, Detached, PDF)
   - Expected: Options UI ready
 
 - [ ] **Task 14.2**: Add timestamp option
-
   - File: `components/signing/SignatureOptions.tsx`
   - Add: Checkbox for timestamp
   - Add: Optional timestamp URL input
@@ -458,21 +424,18 @@ npm run dev
 ### Day 15: Signature Result Component
 
 - [ ] **Task 15.1**: Create result component
-
   - File: `components/signing/SignatureResult.tsx`
   - Display: Signature details
   - Show: Algorithm, timestamp, fingerprint
   - Expected: Result display ready
 
 - [ ] **Task 15.2**: Add download button
-
   - File: `components/signing/SignatureResult.tsx`
   - Implement: Download signature file
   - Use: file-saver or Blob download
   - Expected: Download works
 
 - [ ] **Task 15.3**: Add copy to clipboard
-
   - File: `components/signing/SignatureResult.tsx`
   - Add: Copy signature button
   - Use: Clipboard API
@@ -487,42 +450,36 @@ npm run dev
 ### Day 16: Sign Page
 
 - [ ] **Task 16.1**: Create sign page
-
   - File: `app/sign/page.tsx`
   - Layout: Multi-step workflow
   - Use: Tabs or stepper
   - Expected: Sign page structure
 
 - [ ] **Task 16.2**: Integrate certificate upload
-
   - File: `app/sign/page.tsx`
   - Step 1: Upload certificate
   - Show: Certificate details
   - Expected: Certificate upload works
 
 - [ ] **Task 16.3**: Integrate key upload
-
   - File: `app/sign/page.tsx`
   - Step 2: Upload private key
   - Handle: Password input if encrypted
   - Expected: Key upload works
 
 - [ ] **Task 16.4**: Integrate document upload
-
   - File: `app/sign/page.tsx`
   - Step 3: Upload document
   - Show: Document info and hash
   - Expected: Document upload works
 
 - [ ] **Task 16.5**: Integrate signature options
-
   - File: `app/sign/page.tsx`
   - Step 4: Select options
   - Default: SHA-256, PKCS#7
   - Expected: Options work
 
 - [ ] **Task 16.6**: Implement signing
-
   - File: `app/sign/page.tsx`
   - Step 5: Generate signature
   - Show: Progress indicator
@@ -541,28 +498,24 @@ npm run dev
 ### Day 17: Signature Validator
 
 - [ ] **Task 17.1**: Create validator module
-
   - File: `lib/crypto/signature-validator.ts`
   - Implement: `validateSignature(document, signature, options)`
   - Use: jsrsasign CMS parser
   - Expected: Validate signatures
 
 - [ ] **Task 17.2**: Implement signature verification
-
   - File: `lib/crypto/signature-validator.ts`
   - Verify: Cryptographic integrity
   - Use: jsrsasign isSignatureValid
   - Expected: Verify signatures
 
 - [ ] **Task 17.3**: Implement certificate extraction
-
   - File: `lib/crypto/signature-validator.ts`
   - Extract: Signer certificate from signature
   - Parse: Certificate details
   - Expected: Extract certificate
 
 - [ ] **Task 17.4**: Implement chain validation
-
   - File: `lib/crypto/signature-validator.ts`
   - Validate: Certificate chain
   - Check: Against trusted CAs
@@ -577,21 +530,18 @@ npm run dev
 ### Day 18: Validation Upload Component
 
 - [ ] **Task 18.1**: Create validation upload component
-
   - File: `components/validation/ValidationUpload.tsx`
   - Upload: Document and signature
   - Support: Separate or embedded
   - Expected: Upload component ready
 
 - [ ] **Task 18.2**: Add document upload
-
   - File: `components/validation/ValidationUpload.tsx`
   - Upload: Original document
   - Calculate: Hash for verification
   - Expected: Document upload works
 
 - [ ] **Task 18.3**: Add signature upload
-
   - File: `components/validation/ValidationUpload.tsx`
   - Upload: Signature file
   - Support: Base64 or binary
@@ -606,35 +556,30 @@ npm run dev
 ### Day 19: Validation Result Component
 
 - [ ] **Task 19.1**: Create result component
-
   - File: `components/validation/ValidationResult.tsx`
   - Display: Validation status
   - Show: Valid/Invalid/Warning
   - Expected: Result component ready
 
 - [ ] **Task 19.2**: Add status indicator
-
   - File: `components/validation/ValidationResult.tsx`
   - Visual: ✅ ⚠️ ❌ icons
   - Color: Green/Yellow/Red
   - Expected: Clear status display
 
 - [ ] **Task 19.3**: Display errors
-
   - File: `components/validation/ValidationResult.tsx`
   - List: All validation errors
   - Show: Error codes and messages
   - Expected: Errors displayed
 
 - [ ] **Task 19.4**: Display warnings
-
   - File: `components/validation/ValidationResult.tsx`
   - List: All warnings
   - Show: Warning messages
   - Expected: Warnings displayed
 
 - [ ] **Task 19.5**: Display certificate chain
-
   - File: `components/validation/ValidationResult.tsx`
   - Show: Certificate hierarchy
   - Visual: Tree or list view
@@ -649,14 +594,12 @@ npm run dev
 ### Day 20: Validation Details Component
 
 - [ ] **Task 20.1**: Create details component
-
   - File: `components/validation/ValidationDetails.tsx`
   - Display: Detailed validation info
   - Show: All checks performed
   - Expected: Details component ready
 
 - [ ] **Task 20.2**: Show signature details
-
   - File: `components/validation/ValidationDetails.tsx`
   - Display: Algorithm, timestamp
   - Show: Signer information
@@ -671,21 +614,18 @@ npm run dev
 ### Day 21: Validate Page
 
 - [ ] **Task 21.1**: Create validate page
-
   - File: `app/validate/page.tsx`
   - Layout: Upload + results sections
   - State: Manage validation state
   - Expected: Validate page structure
 
 - [ ] **Task 21.2**: Integrate upload component
-
   - File: `app/validate/page.tsx`
   - Add: ValidationUpload component
   - Handle: File uploads
   - Expected: Upload works
 
 - [ ] **Task 21.3**: Implement validation
-
   - File: `app/validate/page.tsx`
   - Call: validateSignature function
   - Show: Progress indicator
@@ -704,14 +644,12 @@ npm run dev
 ### Day 22: Dashboard/Home Page
 
 - [ ] **Task 22.1**: Create home page
-
   - File: `app/page.tsx`
   - Layout: Hero + feature cards
   - Links: To sign and validate pages
   - Expected: Attractive home page
 
 - [ ] **Task 22.2**: Add feature cards
-
   - File: `app/page.tsx`
   - Cards: Sign, Validate, Certificates
   - Icons: lucide-react icons
@@ -726,21 +664,18 @@ npm run dev
 ### Day 23: Navigation
 
 - [ ] **Task 23.1**: Create header component
-
   - File: `components/layout/Header.tsx`
   - Include: Logo, navigation links
   - Responsive: Mobile menu
   - Expected: Header component ready
 
 - [ ] **Task 23.2**: Create navigation component
-
   - File: `components/layout/Navigation.tsx`
   - Links: Home, Sign, Validate, Certificates
   - Active: Highlight current page
   - Expected: Navigation works
 
 - [ ] **Task 23.3**: Create footer component
-
   - File: `components/layout/Footer.tsx`
   - Include: Links, copyright
   - Info: Version, documentation
@@ -755,14 +690,12 @@ npm run dev
 ### Day 24: Loading States
 
 - [ ] **Task 24.1**: Add loading spinners
-
   - Files: All async components
   - Use: Spinner or skeleton
   - Show: During operations
   - Expected: Loading feedback
 
 - [ ] **Task 24.2**: Add progress indicators
-
   - Files: Sign and validate pages
   - Show: Operation progress
   - Use: Progress component
@@ -777,14 +710,12 @@ npm run dev
 ### Day 25: Error Handling
 
 - [ ] **Task 25.1**: Create error boundary
-
   - File: `components/ErrorBoundary.tsx`
   - Catch: React errors
   - Display: Error message
   - Expected: Graceful error handling
 
 - [ ] **Task 25.2**: Improve error messages
-
   - Files: All components
   - Make: User-friendly
   - Add: Actionable suggestions
@@ -799,14 +730,12 @@ npm run dev
 ### Day 26: Dark Mode
 
 - [ ] **Task 26.1**: Setup theme provider
-
   - File: `context/ThemeContext.tsx`
   - Implement: Light/dark theme toggle
   - Use: next-themes or custom
   - Expected: Theme switching works
 
 - [ ] **Task 26.2**: Add theme toggle
-
   - File: `components/layout/Header.tsx`
   - Button: Toggle theme
   - Icon: Sun/moon icon
@@ -821,14 +750,12 @@ npm run dev
 ### Day 27: Responsive Design
 
 - [ ] **Task 27.1**: Test mobile layout
-
   - Test: All pages on mobile
   - Fix: Layout issues
   - Verify: Touch-friendly
   - Expected: Mobile responsive
 
 - [ ] **Task 27.2**: Test tablet layout
-
   - Test: All pages on tablet
   - Fix: Layout issues
   - Verify: Good use of space
@@ -846,35 +773,31 @@ npm run dev
 
 ### Day 28: Unit Tests
 
-- [ ] **Task 28.1**: Setup testing framework
-
+- [x] **Task 28.1**: Setup testing framework
   - Install: vitest, @testing-library/react
   - Configure: vitest.config.ts
   - Create: Test setup file
   - Expected: Testing ready
 
-- [ ] **Task 28.2**: Test certificate parser
-
+- [x] **Task 28.2**: Test certificate parser
   - File: `tests/unit/certificate-parser.test.ts`
   - Test: All parsing functions
   - Mock: Certificate data
   - Expected: Parser tests pass
 
 - [ ] **Task 28.3**: Test signature generator
-
   - File: `tests/unit/signature-generator.test.ts`
   - Test: Signature creation
   - Mock: Keys and certificates
   - Expected: Generator tests pass
 
 - [ ] **Task 28.4**: Test signature validator
-
   - File: `tests/unit/signature-validator.test.ts`
   - Test: Validation logic
   - Mock: Signatures and certificates
   - Expected: Validator tests pass
 
-- [ ] **Task 28.5**: Test utility functions
+- [x] **Task 28.5**: Test utility functions
   - File: `tests/unit/utils.test.ts`
   - Test: All utility functions
   - Cover: Edge cases
@@ -883,14 +806,12 @@ npm run dev
 ### Day 29: Integration Tests
 
 - [ ] **Task 29.1**: Test signing workflow
-
   - File: `tests/integration/signing.test.ts`
   - Test: Complete signing process
   - Verify: Signature is valid
   - Expected: Signing workflow works
 
 - [ ] **Task 29.2**: Test validation workflow
-
   - File: `tests/integration/validation.test.ts`
   - Test: Complete validation process
   - Verify: Correct validation results
@@ -904,28 +825,25 @@ npm run dev
 
 ### Day 30: Documentation
 
-- [ ] **Task 30.1**: Write user guide
-
+- [x] **Task 30.1**: Write user guide
   - File: `docs/user-guide.md`
   - Include: Getting started
   - Include: Feature tutorials
   - Expected: Complete user guide
 
-- [ ] **Task 30.2**: Write API documentation
-
+- [x] **Task 30.2**: Write API documentation
   - File: `docs/api-reference.md`
   - Document: All public functions
   - Include: Examples
   - Expected: Complete API docs
 
-- [ ] **Task 30.3**: Write developer guide
-
+- [x] **Task 30.3**: Write developer guide
   - File: `docs/development.md`
   - Include: Setup instructions
   - Include: Architecture overview
   - Expected: Complete dev guide
 
-- [ ] **Task 30.4**: Create README
+- [x] **Task 30.4**: Create README
   - File: `README.md`
   - Include: Project overview
   - Include: Quick start
@@ -935,14 +853,12 @@ npm run dev
 ### Day 31: Performance Optimization
 
 - [ ] **Task 31.1**: Analyze bundle size
-
   - Tool: Next.js bundle analyzer
   - Identify: Large dependencies
   - Optimize: Code splitting
   - Expected: Optimized bundle
 
 - [ ] **Task 31.2**: Optimize images
-
   - Use: next/image for all images
   - Add: Proper width/height
   - Optimize: Image formats
@@ -956,21 +872,19 @@ npm run dev
 
 ### Day 32: Security Audit
 
-- [ ] **Task 32.1**: Review security practices
-
+- [x] **Task 32.1**: Review security practices
   - Check: Private key handling
   - Verify: No key transmission
   - Confirm: Memory clearing
   - Expected: Security verified
 
 - [ ] **Task 32.2**: Test CSP
-
   - Verify: Content Security Policy
   - Test: No CSP violations
   - Fix: Any issues
   - Expected: CSP working
 
-- [ ] **Task 32.3**: Dependency audit
+- [x] **Task 32.3**: Dependency audit
   - Run: `npm audit`
   - Fix: Security vulnerabilities
   - Update: Dependencies
@@ -979,14 +893,12 @@ npm run dev
 ### Day 33: Final Testing
 
 - [ ] **Task 33.1**: End-to-end testing
-
   - Test: All user workflows
   - Verify: Everything works
   - Fix: Any bugs
   - Expected: All features work
 
 - [ ] **Task 33.2**: Browser compatibility
-
   - Test: Chrome, Firefox, Safari
   - Test: Mobile browsers
   - Fix: Compatibility issues
