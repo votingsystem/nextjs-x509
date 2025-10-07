@@ -9,7 +9,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'X.509 Digital Signature Application',
-  description: 'A secure, client-side tool for creating and validating digital signatures using X.509 certificates',
+  description:
+    'A secure, client-side tool for creating and validating digital signatures using X.509 certificates',
   keywords: ['X.509', 'digital signature', 'PKCS#7', 'CMS', 'certificate', 'cryptography'],
 };
 
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
